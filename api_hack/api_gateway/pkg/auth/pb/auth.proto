@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "./pkg/auth/pb";
+
+service AuthService {
+
+  rpc Login(LoginRequest) returns (LoginResponse) {}
+}
+
+// Login
+
+message LoginRequest {
+
+  string email = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+
+  int64 status = 1;
+  string error = 2;
+  
+}
+
+/* TODO: Реализовать проверку учетных данных пользователей
+    1. Проверка поролей
+    2. Проверка биометрии
+    3. Проверка OTP
+    4. Проверка SMS-кода
+    5. Проверка аутентификации по устройству
+
+*/
+
+
