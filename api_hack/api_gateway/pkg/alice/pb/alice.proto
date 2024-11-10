@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package alice;
+
+option go_package = "./pkg/alice/pb";
+
+message AliceRequest {
+ string userId = 1;
+ string command = 2;
+ string username = 3;
+}
+
+message AliceResponse {
+ string text = 1;
+ bool success = 2;
+ string code = 3;
+}

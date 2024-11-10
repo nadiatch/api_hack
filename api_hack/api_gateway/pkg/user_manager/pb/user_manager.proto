@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package auth;
+package user_manager;
 
 option go_package = "./pkg/user_manager/pb";
 
@@ -23,5 +23,5 @@ message RegisterResponse {
 
 /* TODO: Реализовать возможности
 1. Смены пароля
-2. Блокировки уччетной записи
+2. Блокировки учетной записи
 */

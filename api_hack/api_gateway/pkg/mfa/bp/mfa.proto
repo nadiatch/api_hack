@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package mfa;
+
+option go_package = "./pkg/mfa/pb";
+
+message GenerateCodeRequest {
+ string username = 1;
+}
+
+message GenerateCodeResponse {
+ string code = 1;
+}
+
+message VerifyCodeRequest {
+ string username = 1;
+ string code = 2;
+}
+
+message VerifyCodeResponse {
+ bool success = 1;
+ string message = 2;
+}
+
+//TODO:  Реализовать генерацию и проверку кодов для выбраных факторов

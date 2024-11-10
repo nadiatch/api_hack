@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package user_scenario;
+
+option go_package = "./pkg/user_scenario/pb";
+
+message UserScenarioRequest {
+  string userId = 1;
+  repeated Action action = 2;
+}
+
+message Action {
+  string type = 1;
+  map<string, string> context = 2;
+}
+
+message RiskScenarioResponse {
+  repeated RiskEvent event = 1;
+  string overallRisk = 2;
+}
+
+message RiskEvent {
+  string actionType = 1;
+  bool risky = 2;
+  string reason = 3;
+  map<string, string> recommendations = 4;
+}

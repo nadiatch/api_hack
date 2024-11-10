@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package risk_service;
+
+option go_package = "./pkg/risk_service/pb";
+
+message RiskRequest {
+  string userId = 1;
+  string action = 2;
+  map<string, string> context = 3;
+}
+
+message RiskResponse {
+  bool risky = 1;
+  string reason = 2;
+  map<string, string> recommendations = 3;
+}
